@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     compress: {
       build: {
         options: {
-          archive: 'dist/bitpay-for-woocommerce.zip'
+          archive: 'dist/paybee-for-woocommerce.zip'
         },
         files: [{
           expand: true,
@@ -38,40 +38,40 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/',
             src: ['**/**.php', 'assets/js/**/**.*', 'assets/img/**/**.*', 'templates/**/**.*'],
-            dest: 'dist/bitpay-for-woocommerce'
+            dest: 'dist/paybee-for-woocommerce'
           },
           {
             expand: true,
-            cwd: 'vendor/bitpay/php-client/src/',
+            cwd: 'vendor/paybee/php-client/src/',
             src: ['**/**.*'],
-            dest: 'dist/bitpay-for-woocommerce/lib'
+            dest: 'dist/paybee-for-woocommerce/lib'
           },
           {
             src: 'readme.txt',
-            dest: 'dist/bitpay-for-woocommerce/readme.txt'
+            dest: 'dist/paybee-for-woocommerce/readme.txt'
           },
           {
             src: 'LICENSE',
-            dest: 'dist/bitpay-for-woocommerce/license.txt'
+            dest: 'dist/paybee-for-woocommerce/license.txt'
           }
         ]
       },
       dev: {
         files: [{
           expand: true,
-          cwd: 'dist/bitpay-for-woocommerce',
+          cwd: 'dist/paybee-for-woocommerce',
           src: ['**/**'],
-          dest: '/var/www/html/woocommerce/wp-content/plugins/bitpay-for-woocommerce/'
+          dest: '/var/www/html/woocommerce/wp-content/plugins/paybee-for-woocommerce/'
         }]
       }
     },
     cssmin: {
       build: {
         options: {
-          banner: '/**\n * @license Copyright 2011-2014 BitPay Inc., MIT License\n * see https://github.com/bitpay/woocommerce-plugin/blob/master/LICENSE\n */'
+          banner: '/**\n * @license Copyright 2011-2014 BitPay Inc., MIT License\n * see https://github.com/paybee/woocommerce-plugin/blob/master/LICENSE\n */'
         },
         files: {
-          'dist/bitpay-for-woocommerce/assets/css/style.css': ['src/assets/css/**.css']
+          'dist/paybee-for-woocommerce/assets/css/style.css': ['src/assets/css/**.css']
         }
       }
     },

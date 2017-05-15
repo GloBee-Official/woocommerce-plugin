@@ -17,11 +17,11 @@
         }
     ],
     "require": {
-        "bitpay/php-client": "dev-master@dev"
+        "paybee/php-client": "dev-master@dev"
     },
 	"require-dev": {
         "wp-cli/wp-cli": "*",
-        "fabpot/php-cs-fixer": "@stable",
+        "friendsofphp/php-cs-fixer": "@stable",
         "phpunit/phpunit": "~3.7"
 	},
   "minimum-stability": "stable",
