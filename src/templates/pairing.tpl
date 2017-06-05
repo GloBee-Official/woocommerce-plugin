@@ -5,5 +5,5 @@
 		<option value="testnet">Testnet</option>
 	</select>
 	<button class="bitpay-pairing__find ui-button-text button">Find</button>
-	<div class="bitpay-pairing__help">Get a pairing code: <a href="https://payb.ee/api-tokens" class="bitpay-pairing__link" target="_blank">https://payb.ee.com/api-tokens</a></div>
+	<div class="bitpay-pairing__help">Get a pairing code: <a href="https://globee.com/api-tokens" class="bitpay-pairing__link" target="_blank">https://globee.com/api-tokens</a></div>
 </div>

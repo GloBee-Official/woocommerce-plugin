@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     clean: {
       build: ['dist'],
       dev: {
-        src: ['/var/www/html/woocommerce/wp-content/plugins/bitpay-for-woocommerce/'],
+        src: ['/var/www/html/woocommerce/wp-content/plugins/globee-for-woocommerce/'],
         options: {
           force: true
         }
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     compress: {
       build: {
         options: {
-          archive: 'dist/paybee-for-woocommerce.zip'
+          archive: 'dist/globee-for-woocommerce.zip'
         },
         files: [{
           expand: true,
@@ -38,30 +38,30 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/',
             src: ['**/**.php', 'assets/js/**/**.*', 'assets/img/**/**.*', 'templates/**/**.*'],
-            dest: 'dist/paybee-for-woocommerce'
+            dest: 'dist/globee-for-woocommerce'
           },
           {
             expand: true,
             cwd: 'vendor/paybee/php-client/src/',
             src: ['**/**.*'],
-            dest: 'dist/paybee-for-woocommerce/lib'
+            dest: 'dist/globee-for-woocommerce/lib'
           },
           {
             src: 'readme.txt',
-            dest: 'dist/paybee-for-woocommerce/readme.txt'
+            dest: 'dist/globee-for-woocommerce/readme.txt'
           },
           {
             src: 'LICENSE',
-            dest: 'dist/paybee-for-woocommerce/license.txt'
+            dest: 'dist/globee-for-woocommerce/license.txt'
           }
         ]
       },
       dev: {
         files: [{
           expand: true,
-          cwd: 'dist/paybee-for-woocommerce',
+          cwd: 'dist/globee-for-woocommerce',
           src: ['**/**'],
-          dest: '/var/www/html/woocommerce/wp-content/plugins/paybee-for-woocommerce/'
+          dest: '/var/www/html/woocommerce/wp-content/plugins/globee-for-woocommerce/'
         }]
       }
     },
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
           banner: '/**\n * @license Copyright 2011-2014 BitPay Inc., MIT License\n * see https://github.com/paybee/woocommerce-plugin/blob/master/LICENSE\n */'
         },
         files: {
-          'dist/paybee-for-woocommerce/assets/css/style.css': ['src/assets/css/**.css']
+          'dist/globee-for-woocommerce/assets/css/style.css': ['src/assets/css/**.css']
         }
       }
     },

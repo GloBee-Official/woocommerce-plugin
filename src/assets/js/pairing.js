@@ -16,8 +16,8 @@
     $('#bitpay_api_token_form').on('change', '.bitpay-pairing__network', function (e) {
 
       // Helper urls
-      var livenet = 'https://bitpay.com/api-tokens';
-      var testnet = 'https://test.bitpay.com/api-tokens';
+      var livenet = 'https://globee.com/api-tokens';
+      var testnet = 'https://test.payb.ee/api-tokens';
 
       if ($('.bitpay-pairing__network').val() === 'livenet') {
         $('.bitpay-pairing__link').attr('href', livenet).html(livenet);
@@ -63,12 +63,12 @@
           $('.bitpay-pairing__code').val('');
           $('.bitpay-pairing__network').val('livenet');
           $('#message').remove();
-          $('h2.woo-nav-tab-wrapper').after('<div id="message" class="updated fade"><p><strong>You have been paired with your BitPay account!</strong></p></div>');
+          $('h2.woo-nav-tab-wrapper').after('<div id="message" class="updated fade"><p><strong>You have been paired with your GloBee account!</strong></p></div>');
         }
         // Pairing failed
         else if (data && data.success === false) {
           $('.bitpay-pairing').show();
-          alert('Unable to pair with BitPay.');
+          alert('Unable to pair with GloBee.');
         }
 
       });
