@@ -2,7 +2,7 @@
 	"repositories": [
         {
             "type": "git",
-            "url": "https://github.com/paybee/php-bitpay-client.git"
+            "url": "https://github.com/globee-official/php-bitpay-client.git"
         },
         {
           "type": "package",

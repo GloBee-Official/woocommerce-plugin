@@ -17,7 +17,7 @@
 
       // Helper urls
       var livenet = 'https://globee.com/api-tokens';
-      var testnet = 'https://test.payb.ee/api-tokens';
+      var testnet = 'https://test.globee.com/api-tokens';
 
       if ($('.bitpay-pairing__network').val() === 'livenet') {
         $('.bitpay-pairing__link').attr('href', livenet).html(livenet);
