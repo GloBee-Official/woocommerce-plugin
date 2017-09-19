@@ -3,11 +3,11 @@
     Plugin Name: GloBee for WooCommerce
     Plugin URI:  https://globee.com
     Description: Enable your WooCommerce store to accept Bitcoin with GloBee.
-    Author:      bitpay
-    Author URI:  https://bitpay.com
+    Author:      Globee
+    Author URI:  https://globee.com
 
-    Version:           2.2.9
-    License:           Copyright 2011-2014 BitPay Inc., MIT License
+    Version:           3.1.2
+    License:           Copyright 2016-2017 GloBee., MIT License
     License URI:       https://github.com/bitpay/woocommerce-plugin/blob/master/LICENSE
     GitHub Plugin URI: https://github.com/globee/woocommerce-plugin
  */
@@ -283,7 +283,7 @@ function woocommerce_bitpay_init()
                     'type'        => 'checkbox',
                     'label'       => sprintf(__('Enable logging <a href="%s" class="button">View Logs</a>', 'bitpay'), $logs_href),
                     'default'     => 'no',
-                    'description' => sprintf(__('Log BitPay events, such as IPN requests, inside <code>%s</code>', 'bitpay'), wc_get_log_file_path('bitpay')),
+                    'description' => sprintf(__('Log GloBee events, such as IPN requests, inside <code>%s</code>', 'bitpay'), wc_get_log_file_path('bitpay')),
                     'desc_tip'    => true,
                ),
                 'notification_url' => array(
@@ -572,7 +572,7 @@ function woocommerce_bitpay_init()
             // Mark new order according to user settings (we're awaiting the payment)
             $new_order_states = $this->get_option('order_states');
             $new_order_status = $new_order_states['new'];
-            $order->update_status($new_order_status, 'Awaiting payment notification from BitPay.');
+            $order->update_status($new_order_status, 'Awaiting payment notification from GloBee.');
 
             $thanks_link = $this->get_return_url($order);
 
@@ -909,7 +909,7 @@ function woocommerce_bitpay_init()
                         $this->log('    [Info] This order has not been updated yet so setting new status...');
 
                         $order->update_status($paid_status);
-                        $order->add_order_note(__('BitPay invoice paid. Awaiting network confirmation and payment completed status.', 'bitpay'));
+                        $order->add_order_note(__('GloBee invoice paid. Awaiting network confirmation and payment completed status.', 'bitpay'));
                     }
 
                     break;
@@ -931,7 +931,7 @@ function woocommerce_bitpay_init()
                         $this->log('    [Info] This order has not been updated yet so setting confirmed status...');
 
                         $order->update_status($confirmed_status);
-                        $order->add_order_note(__('BitPay invoice confirmed. Awaiting payment completed status.', 'bitpay'));
+                        $order->add_order_note(__('GloBee invoice confirmed. Awaiting payment completed status.', 'bitpay'));
                     }
 
                     break;
@@ -954,7 +954,7 @@ function woocommerce_bitpay_init()
 
                         $order->payment_complete();
                         $order->update_status($complete_status);
-                        $order->add_order_note(__('BitPay invoice payment completed. Payment credited to your merchant account.', 'bitpay'));
+                        $order->add_order_note(__('GloBee invoice payment completed. Payment credited to your merchant account.', 'bitpay'));
                     }
 
                     break;
@@ -1381,7 +1381,7 @@ function woocommerce_bitpay_activate()
         foreach ($plugins as $file => $plugin) {
             if ('Bitpay Woocommerce' === $plugin['Name'] && true === is_plugin_active($file)) {
                 deactivate_plugins(plugin_basename(__FILE__));
-                wp_die('BitPay for WooCommerce requires that the old plugin, <b>Bitpay Woocommerce</b>, is deactivated and deleted.<br><a href="'.$plugins_url.'">Return to plugins screen</a>');
+                wp_die('GloBee for WooCommerce requires that the old plugin, <b>GloBee Woocommerce</b>, is deactivated and deleted.<br><a href="'.$plugins_url.'">Return to plugins screen</a>');
 
             }
         }
@@ -1397,7 +1397,7 @@ function woocommerce_bitpay_activate()
             }
         }
 
-        update_option('woocommerce_bitpay_version', '2.2.9');
+        update_option('woocommerce_bitpay_version', '3.1.2');
 
     } else {
         // Requirements not met, return an error message
